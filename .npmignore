@@ -10,8 +10,9 @@
 .ember-cli
 .gitignore
 .jshintrc
-.watchmanconfig
+.npmignore
 .travis.yml
+.watchmanconfig
 bower.json
 ember-cli-build.js
 testem.js
