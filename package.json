@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-openpgp-shim",
   "version": "0.0.0",
-  "description": "Brings openpgp into your Ember application",
+  "description": "Brings OpenPGP.js into your Ember application!",
   "directories": {
     "doc": "doc",
     "test": "tests"

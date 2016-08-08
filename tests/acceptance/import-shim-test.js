@@ -20,7 +20,7 @@ import {
   util
 } from 'openpgp';
 
-module('Acceptance | Shim', {});
+module('Acceptance | Import shim test', {});
 
 test('import default binding', function (assert) {
   assert.expect(3);
