@@ -1,0 +1,31 @@
+<form {{action 'generateKey' on='submit'}}>
+    <p>
+        <label>Name<br>
+          {{input value=name type='text'}}
+        </label>
+    </p>
+    <p>
+        <label>Email address<br>
+          {{input value=emailAddress type='text'}}
+        </label>
+    </p>
+    <p>
+        <label>Passphrase<br>
+          {{input value=passphrase type='text'}}
+        </label>
+    </p>
+    <p>
+        <button type="submit">Generate key</button>
+    </p>
+</form>
+
+<p>
+    <label>Public key<br>
+      {{textarea value=publicKeyArmored rows=35 cols=63}}
+    </label>
+</p>
+<p>
+    <label>Private key<br>
+      {{textarea value=privateKeyArmored rows=45 cols=63}}
+    </label>
+</p>
