@@ -35,8 +35,8 @@ import openpgp from 'openpgp';
 
 ## Example
 
-This code snippet is from the dummy app. [Install](#contributing-installation)
-and [run](#contributing-running) it to create your own PGP key pair.
+This code snippet is from the dummy app. [Install](#installation-1)
+and [run](#running) it to create your own PGP key pair.
 
 ```js
 import Ember from 'ember';
