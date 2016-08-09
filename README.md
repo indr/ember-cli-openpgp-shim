@@ -38,23 +38,40 @@ This addon ist tested against the `release`, `beta`, `canary` channels and versi
 import openpgp from 'openpgp';
 ```
 
-## Example
-
-This code snippet is from the dummy app. [Install](#installation-1)
-and [run](#running) it to create your own PGP key pair.
+## Options
 
 ```js
+// config/environment.js
+module.exports = function(environment) {
+  return {
+    openpgp: {
+      // Specify the output path of `openpgp.min.js` and `openpgp.worker.min.js`
+      // 
+      // If you don't want to use web workers, you can disable
+      // assets export by setting this option to `null`.
+      //
+      // Default: 'assets'
+      assetsOutputPath: 'assets/openpgp'
+    }
+  }
+}
+```
+
+## Examples
+
+These code snippets are from the dummy app. [Install](#installation-1)
+and [run](#running) it to create your own PGP key pair.
+
+### Generate Key
+
+```js
+// tests/dummy/app/components/generate-key.js
 import Ember from 'ember';
 import layout from '../templates/components/generate-key';
 import openpgp from 'openpgp';
 
 export default Ember.Component.extend({
   layout,
-  
-  init() {
-    this._super(...arguments);
-    openpgp.initWorker({path: 'assets/openpgp.worker.min.js'});
-  },
   
   actions: {
     generateKey() {
@@ -75,8 +92,42 @@ export default Ember.Component.extend({
     }
   }
 });
-
 ```
+
+### Init Worker
+
+```js
+// tests/dummy/app/components/init-worker.js
+import Ember from 'ember';
+import layout from '../templates/components/init-worker';
+import openpgp from 'openpgp';
+
+export default Ember.Component.extend({
+  layout,
+  
+  path: 'assets',
+  
+  actions: {
+    initWorker() {
+      const path = this.get('path');
+      openpgp.initWorker({path: path + '/openpgp.worker.min.js'});
+    }
+  }
+});
+```
+
+## Changelog
+
+[CHANGELOG](CHANGELOG.md)
+
+## Credits
+
+I've used these projects to figure out stuff and copy code from:
+
+ - Jason Mitchell and his [ember-cli-moment-shim](https://github.com/jasonmit/ember-cli-moment-shim)
+ - Damian Senn and his [ember-cli-emojione-shim](https://github.com/topaxi/ember-cli-emojione-shim)
+
+Thank you!
 
 ## License
 
