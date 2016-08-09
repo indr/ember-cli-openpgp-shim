@@ -7,6 +7,11 @@
 
 ES6 accessible module for [OpenPGP.js](https://github.com/openpgpjs/openpgpjs) within your Ember applications.
 
+## Features
+
+ - ES6 assessible module for OpenPGP.js
+ - FastBoot support
+
 ## Installation
 
 You can install either with `ember install`:

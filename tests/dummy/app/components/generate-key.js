@@ -5,11 +5,6 @@ import openpgp from 'openpgp';
 export default Ember.Component.extend({
   layout,
   
-  init() {
-    this._super(...arguments);
-    openpgp.initWorker({path: 'assets/openpgp.worker.min.js'});
-  },
-  
   actions: {
     generateKey() {
       const {name, email, passphrase} = this.getProperties('name', 'emailAddress', 'passphrase');
